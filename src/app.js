@@ -80,7 +80,7 @@ app.post("/register",  async (req,res)=>{
             console.log(`token part is ${token}`);
             // store token in cookies
             res.cookie("jwt",token,{
-                expires:new Date(Date.now()+60000000),
+                expires:new Date(Date.now()+60000),
                 httpOnly:true
             });
             console.log(res.cookie);
@@ -110,7 +110,7 @@ app.post("/login",async (req,res)=>{
          console.log(`login token;${token}`);
         //  save token in cookies
         res.cookie("jwt",token,{
-            expires:new Date(Date.now()+6000000),
+            expires:new Date(Date.now()+60000),
             httpOnly:true
         });
         // console.log(`this is cookie login parser ${req.cookies.jwt}`);
